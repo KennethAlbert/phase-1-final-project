@@ -202,6 +202,19 @@ function renderCartItems() {
   }
 
 
+  //setting the functionalities of the remove button
+  function removeItemFromCart(id) {
+    cart = cart.filter((item) => item.id !== id);
+  
+    updateCart();
+  }
+
+
+
+
+
+
+
     //`setting Up an Update function that updates products with post`
 
     function updatestore(product){
