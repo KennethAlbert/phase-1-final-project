@@ -33,6 +33,29 @@ let subTotal=document.querySelector('.total p')
 
 form.addEventListener('submit',handleSubmit)
 
+
+function handleSubmit(e) {
+    e.preventDefault();
+    let productObject={
+      title:e.target.productName.value,
+      price: e.target.price.value,
+      description: e.target.message.value,
+      image: e.target.image.value,
+      category: e.target.categery.value,
+      }
+  
+      updatestore(productObject)
+      renderToDom(productObject)
+     
+  //console.log(e.target.price)
+    clear()
+  }
+
+
+
+
+
+
   function clear() {
     productName.value=""
     productPrice.value=""
