@@ -50,4 +50,24 @@ function renderCartDom(item) {
     </div>
     `
 }
-
+//fetching products from the fake Api store
+function fetchProducts() {   
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(complete=>{
+    complete.forEach(cards => {
+       let list;
+       list=`<div class="card">
+       <h1 class="title">${cards.title}</h1>
+       <img src=${cards.image}  class="images" alt="" >    
+       <p>${cards.description}</p>
+       <p id="catergory">${cards.category}</p>
+       <p id="price">$ ${cards.price} </p>
+       <div id="card-buttons">
+       <button class="button-cards addCart" onclick="addToCart(${cards.id})" >Buy me</button>
+       </div>
+       </div>`
+       document.querySelector('#cards').innerHTML+=list
+    
+    });  
+    })}
