@@ -9,10 +9,6 @@ fetchProducts(),
 
 
 
-
-
-
-
 //setting global variables
 
 let productName=document.querySelector('form #productName');
@@ -31,6 +27,22 @@ let description=document.querySelector('.card p');
 let cartValue=document.querySelector('#cart-btn i')
 let addCartbtn=document.querySelector('#addCart');
 let subTotal=document.querySelector('.total p')
+
+
+//adding an event listener to the form
+
+form.addEventListener('submit',handleSubmit)
+
+  function clear() {
+    productName.value=""
+    productPrice.value=""
+    productimage.value=""
+    productCategory.value=""
+    productDescription.value=""
+  }
+
+
+
 
 //function that render to the dom
 function renderToDom(object) {
