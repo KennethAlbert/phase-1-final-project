@@ -1,5 +1,7 @@
 # phase-1-final-project
 
+# BY KENNETH ALBERT GICHUKA
+
 
 # LIKE A BOSS STORES
 
