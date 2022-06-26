@@ -154,6 +154,32 @@ renderSubtotal();
 updatestore();
           }
 
+//setting up render to cart function
+function renderCartItems() {
+    document.querySelector('#cardCart').innerHTML=" "
+    cart.forEach((item) => {
+       document.querySelector('#cardCart').innerHTML+=`
+       <div class="card">
+       <h1 class="title">${item.title}</h1>
+       <img src=${item.image}  class="images" alt="" >    
+       <p>${item.description}</p>
+       <p id="catergory">${item.category}</p>
+       <p id="price">$ ${item.price} </p>
+       <div id="card-buttons">
+       <button class="button-complete"  id="remove" onclick="removeItemFromCart(${item.id})">Remove from cart</button>
+       <div class="btn-plus button-bardge" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>
+       <button class="button-bardge">${item.numberOfUnits}</button>
+       <div class="btn-minus button-bardge" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
+       </div>
+       </div>
+       `
+      
+    })
+ 
+  }
+
+
+
 
     //`setting Up an Update function that updates products with post`
 
