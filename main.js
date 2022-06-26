@@ -112,8 +112,12 @@ function fetchProducts() {
         
          }
 
-
-
+//setting up an Update function
+function updateCart() {
+renderCartItems();
+renderSubtotal();
+updatestore();
+          }
 
 
     //`setting Up an Update function that updates products with post`
