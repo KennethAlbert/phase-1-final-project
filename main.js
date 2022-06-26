@@ -88,7 +88,7 @@ function fetchProducts() {
     })}
 
 
-    //setting Up an Update function that updates products with post
+    //`setting Up an Update function that updates products with post`
 
     function updatestore(product){
   
