@@ -1,3 +1,18 @@
+//initializing  fetch when the dom loads & initializing a Cart variable with an empty array
+
+let cart=[] 
+   
+   
+document.addEventListener('DOMContentLoaded',
+fetchProducts(),
+)
+
+
+
+
+
+
+
 //setting global variables
 
 let productName=document.querySelector('form #productName');
