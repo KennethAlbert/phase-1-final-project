@@ -88,6 +88,34 @@ function fetchProducts() {
     })}
 
 
+  // setting up an addToCart funtion which accepts an Id as a parameter
+
+    function addToCart(id) {
+        fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+        .then(complete=>{
+        if (cart.some((item) => item.id === id)) {
+           changeNumberOfUnits("plus", id);
+            }
+            else{
+         const item = complete.find((card) => card.id === id);
+         
+         cart.push({
+           ...item,
+           numberOfUnits: 1,
+         });
+         
+          }
+          
+        })
+        updateCart(); 
+        
+         }
+
+
+
+
+
     //`setting Up an Update function that updates products with post`
 
     function updatestore(product){
