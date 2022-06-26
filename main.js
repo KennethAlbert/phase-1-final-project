@@ -211,6 +211,20 @@ function renderCartItems() {
 
 
 
+  //setting the subtotals
+
+  function renderSubtotal() {
+    let totalPrice = 0,
+      totalItems = 0;
+  
+    cart.forEach((item) => {
+      totalPrice += item.price * item.numberOfUnits;
+      totalItems += item.numberOfUnits;
+    });
+  
+    subTotal.innerHTML = `$ ${totalPrice}`
+    cartValue.innerHTML = totalItems;
+  }
 
 
 
