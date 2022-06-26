@@ -86,3 +86,25 @@ function fetchProducts() {
     
     });  
     })}
+
+
+    //setting Up an Update function that updates products with post
+
+    function updatestore(product){
+  
+        fetch(`https://fakestoreapi.com/products`,{
+        method:"POST",
+        body:JSON.stringify(
+           {
+           product
+          }
+          
+        )
+        
+     })
+        .then(res=>res.json())
+        .then(json=>{product.id=json
+        }
+         
+          )
+     }
