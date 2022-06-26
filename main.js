@@ -178,7 +178,28 @@ function renderCartItems() {
  
   }
 
+  //setting the functionalities of the + and - bardges
 
+  function changeNumberOfUnits(action, id) {
+    cart = cart.map((item) => {
+      let numberOfUnits = item.numberOfUnits;
+  
+      if (item.id === id) {
+        if (action === "minus" && numberOfUnits > 1) {
+          numberOfUnits--;
+        } else if (action === "plus" && numberOfUnits < item.price) {
+          numberOfUnits++;
+        }
+      }
+  
+      return {
+        ...item,
+        numberOfUnits,
+      };
+    });
+  
+    updateCart();
+  }
 
 
     //`setting Up an Update function that updates products with post`
