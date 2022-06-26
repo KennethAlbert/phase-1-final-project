@@ -17,3 +17,18 @@ let cartValue=document.querySelector('#cart-btn i')
 let addCartbtn=document.querySelector('#addCart');
 let subTotal=document.querySelector('.total p')
 
+//function that render to the dom
+function renderToDom(object) {
+  document.querySelector('#cards').innerHTML+=`<div class="card">
+   <h1 class="title">${object.title}</h1>
+   <img src=${object.image}  class="images" alt="" >    
+   <p>${object.description}</p>
+   <p id="catergory">${object.category}</p>
+   <p id="price">$ ${object.price} </p>
+   <div id="card-buttons">
+   <button class="button-cards addCart" onclick="addToCart(${object.id})" >Buy me</button>
+   </div>
+   </div>`
+   
+}
+
